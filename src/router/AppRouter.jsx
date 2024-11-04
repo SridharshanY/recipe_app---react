@@ -18,7 +18,9 @@ const AppRouter = () => {
           <Route path='about' element={<PrivateRouter/>}>
             <Route path='' element={<About/>} />
           </Route>
-          <Route path='detail' element={<Detail/>} />
+          <Route path='detail' element={<PrivateRouter/>}>
+            <Route path='' element={<Detail/>} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
