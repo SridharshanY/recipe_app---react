@@ -4,11 +4,10 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
 
   return (
     <nav
-      className={`flex flex-row bg-yellow-500 justify-between md:py-1 md:px-4 md:mb-4 px-4 mb-4 rounded-b-xl md:rounded-b-3xl duration-150 ${
+      className={`flex flex-row bg-black justify-between md:py-1 md:px-4 md:mb-4 px-4 mb-4 rounded-b-xl md:rounded-b-3xl duration-150 text-white ${
         isOpen ? "pb-32 duration-150" : ""
       }`}
     >
@@ -30,7 +29,7 @@ const Navbar = () => {
         <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? "text-green-700" : "")}
+            className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
           >
             Home
           </NavLink>
@@ -38,7 +37,7 @@ const Navbar = () => {
         <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
           <NavLink
             to="/login"
-            className={({ isActive }) => (isActive ? "text-green-700" : "")}
+            className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
           >
             Login
           </NavLink>
@@ -46,7 +45,7 @@ const Navbar = () => {
         <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
           <NavLink
             to="/about"
-            className={({ isActive }) => (isActive ? "text-green-700" : "")}
+            className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
           >
             About
           </NavLink>

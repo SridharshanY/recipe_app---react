@@ -3,7 +3,7 @@ import AppRouter from './router/AppRouter'
 
 const App = () => {
   return (
-    <div className='text-center'>
+    <div className='bg-orange-500 min-h-[100vh]'>
       <AppRouter />
     </div>
   )
