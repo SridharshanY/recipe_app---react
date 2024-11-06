@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const user = localStorage.getItem("user")
+
+  const setuser = () => {
+    localStorage.removeItem("user")
+  }
 
   return (
     <nav
@@ -36,18 +41,19 @@ const Navbar = () => {
         </li>
         <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
           <NavLink
-            to="/login"
-            className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
-          >
-            Login
-          </NavLink>
-        </li>
-        <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
-          <NavLink
             to="/about"
             className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
           >
             About
+          </NavLink>
+        </li>
+        <li className={` hover:scale-125 hover:duration-100 ${isOpen ? "text-xl my-3": ""}`}>
+          <NavLink
+            to="/login"
+            onClick={setuser()}
+            className={({ isActive }) => (isActive ? "text-yellow-300 border-b-2 duration-200" : "")}
+          >
+            {user ? "Logout": "Login"}
           </NavLink>
         </li>
       </ul>
